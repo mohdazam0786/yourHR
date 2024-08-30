@@ -9,7 +9,7 @@
     "build": "npm install"
   },
   "engines": {
-    "node": "21.x"
+    "node": "20.x"
   },
   "keywords": [],
   "author": "",
