@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const cors = require('cors');
 const mongoose = require("mongoose");
 const connectDB = require("./config/db");
-
+const authmiddleware = require("./middlewares/authMiddleware")
 //dotenv conig
 dotenv.config();
 
@@ -37,7 +37,7 @@ require("./models/pdfDetails");
 const PdfSchema = mongoose.model("PdfDetails");
 const upload = multer({ storage: storage });
 
-app.post("/upload-files", upload.single("file"), async (req, res) => {
+app.post("/upload-files", authmiddleware,upload.single("file"), async (req, res) => {
   console.log(req.file);
   const title = req.body.title;
   const fileName = req.file.filename;
