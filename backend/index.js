@@ -58,5 +58,13 @@ app.get("/get-files", async (req, res) => {
 //routes
 app.use("/user", require("./routes/userRoutes"));
 
+app.get("/", async (req, res) => {
+  res.send("Success!!!!!!");
+});
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`Server Started at ${PORT}`);
+});
+
 module.exports = app;
 
