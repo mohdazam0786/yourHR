@@ -44,7 +44,7 @@ function UploadPage() {
     }
   };
   const showPdf = (pdf) => {
-    // window.open(`http://localhost:5000/files/${pdf}`, "_blank", "noreferrer");
+    window.open(`http://localhost:5000/files/${pdf}`, "_blank", "noreferrer");
     setPdfFile(`http://localhost:5000/files/${pdf}`)
   };
   return (
@@ -92,7 +92,7 @@ function UploadPage() {
               })}
         </div>
       </div>
-      <PdfComp pdfFile={pdfFile}/>
+      {/* <PdfComp pdfFile={pdfFile}/> */}
     </div>
   );
 }
